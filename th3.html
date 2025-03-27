@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm phần tử trong mảng</title>
+</head>
+<body>
+    <h2>Nhập một số để kiểm tra trong mảng</h2>
+    <button onclick="findElement()">Tìm kiếm</button>
+    <p id="result"></p>
+
+    <script>
+        function findElement() {
+            // Mảng cần tìm
+            let numbers = [-3, 5, 1, 3, 2, 10];
+
+            // Nhập số từ hộp thoại
+            let input = prompt("Nhập số cần tìm:");
+            let searchValue = Number(input); // Chuyển thành số
+
+            // Tìm kiếm vị trí phần tử
+            let index = numbers.indexOf(searchValue);
+
+            // Hiển thị kết quả
+            let resultText = (index !== -1) 
+                ? `Phần tử ${searchValue} được tìm thấy tại vị trí ${index}.`
+                : `Không tìm thấy phần tử ${searchValue}.`;
+            document.write("Số số phần tử: ",numbers)
+            document.getElementById("result").innerHTML = resultText;
+        }
+    </script>
+</body>
+</html>

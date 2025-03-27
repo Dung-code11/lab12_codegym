@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách số</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        button {
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <p><i>Sample Screen:</i></p>
+
+    <input type="text" id="numberInput" placeholder="Nhập số">
+    <button onclick="addNumber()">Add</button>
+    <button onclick="displayNumbers()">Display</button>
+
+    <hr>
+    <div id="output"></div>
+
+    <script>
+        let numbers = [];
+
+        function addNumber() {
+            let input = document.getElementById("numberInput").value;
+            if (input !== "") {
+                numbers.push(Number(input));
+                document.getElementById("numberInput").value = "";
+            }
+        }
+
+        function displayNumbers() {
+            let outputDiv = document.getElementById("output");
+            outputDiv.innerHTML = ""; 
+            numbers.forEach((num, index) => {
+                outputDiv.innerHTML += `Element ${index +1 } = ${num} <br>`;
+            });
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đảo ngược số</title>
+</head>
+<body>
+    <script>
+        function reverseArray(arr) {
+    let left = 0;
+    let right = arr.length - 1;
+
+    while (left < right) {
+        // Hoán đổi phần tử
+        let temp = arr[left];
+        arr[left] = arr[right];
+        arr[right] = temp;
+
+        // Di chuyển chỉ số
+        left++;
+        right--;
+    }
+    return arr;
+}
+
+// Test với mảng đã cho
+let numbers = [-3, 5, 1, 3, 2, 10];
+document.write("Các số ban đầu: " , numbers)
+document.write("<br>")
+document.write("Các số sau khi sắp xếp: ",reverseArray(numbers)); // Output: [10, 2, 3, 1, 5, -3]
+
+    </script>
+</body>
+</html>
